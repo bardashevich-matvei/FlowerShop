@@ -1,0 +1,78 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapseNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">У Матвея</a>
+        </div>
+        <div class="collapse navbar-collapse" id="collapseNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/catalog">Букеты</a></li>
+                <li><a href="/flowers">Наши цветы</a></li>
+                <li><a href="/about">О нас</a></li>
+            </ul>
+            <ul id="auth" class="nav navbar-nav navbar-right hidden">
+                <li><a href="/registration">Регистрация</a></li>
+                <li><a href="/login">Войти</a></li>
+            </ul>
+            <ul id="exit" class="nav navbar-nav navbar-right">
+                <li><a href="#" onclick="myOrders()">Мои заказы</a></li>
+                <li><a id="exitLink" href="#" onclick="exit()">Выйти</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script>
+    $(document).ready(function () {
+        if (localStorage.getItem('user')) {
+            $('#auth').addClass('hidden');
+            $('#exit').removeClass('hidden');
+        } else {
+            $('#auth').removeClass('hidden');
+            $('#exit').addClass('hidden');
+        }
+    });
+
+    function myOrders() {
+        window.location.reload();
+        var user = localStorage.getItem('user');
+        if (localStorage.getItem('user') === null) {
+            return location.reload();
+        }
+        $.ajax({
+            url: '/orders/self',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: user,
+            error: function (jqXHR, exception) {
+                document.write(jqXHR.responseText);
+                $('#collapseNavbar li').has('a[onclick="myOrders()"]').addClass('active');
+            }
+        });
+    }
+
+    function exit() {
+        if (!confirm('Вы уверены, что хотите выйти из аккаунта?')) {
+            return;
+        }
+        $.ajax({
+            url: '/logout',
+            type: 'GET',
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function (data) {
+                if (localStorage.getItem('user') !== null) {
+                    localStorage.removeItem('user');
+                }
+                window.location.href = '/';
+            },
+            error: function (jqXHR, exception) {
+                $('#collapseNavbar li').has('a[onclick="myOrders()"]').addClass('active');
+            }
+        });
+    }
+</script>

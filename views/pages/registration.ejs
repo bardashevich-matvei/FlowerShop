@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head.ejs %>
+</head>
+<body>
+<header>
+    <% include ../partials/header.ejs %>
+</header>
+<div class="container margin-top">
+    <div class="header">
+        <h1>Регистрация</h1>
+    </div>
+    <form id="form" class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-offset-2 col-md-2" for="username">Имя пользователя:</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="username" name="username" autofocus
+                       placeholder="Введите имя пользователя" required pattern="[\w]{6,}"
+                       title="Логин может содержать символы латинского алфавита, цифры и '_'. Минимум 6 символов">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-offset-2 col-md-2" for="password">Пароль:</label>
+            <div class="col-md-6">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Введите пароль"
+                       required pattern="[A-z0-9][\w]{5,}"
+                       title="Пароль должен содержать минимум 6 символов (можно '_'), первый - цифра или латинский символ">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-offset-2 col-md-2" for="telNumber">Номер телефона:</label>
+            <div class="col-md-6">
+                <input type="tel" class="form-control" id="telNumber" name="telNumber" autofocus
+                       placeholder="+375 29 123-45-67" required
+                       pattern="\+375[\s]?[0-9]{2}[\s]?[0-9]{3}([\s-]?[0-9]{2}){2}" title="Пример: +375 29 123-45-67">
+            </div>
+        </div>
+        <div id="errorAlert" class="alert alert-danger col-md-offset-4 col-md-6 hidden">
+            Пользователь с таким именем уже есть. Введите другой
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-8 reverse">
+                <input type="submit" id="signUpButton" class="btn btn-default" value="Зарегистрироваться"/>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="../js/registration.js"></script>
+</body>
+</html>

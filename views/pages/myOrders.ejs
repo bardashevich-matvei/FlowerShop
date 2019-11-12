@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head.ejs %>
+</head>
+<body>
+<header>
+    <% include ../partials/header.ejs %>
+</header>
+<div class="container-fluid margin-top">
+    <div class="header">
+        <h1>Заказанные букеты</h1>
+    </div>
+    <% if (data.length === 0) { %>
+    <h3>У вас нет заказанных букетов. <a href="/catalog">Заказать букет</a></h3>
+    <% } %>
+    <div id="bouquets">
+        <% data.forEach(function(order) { %>
+        <div class="col-md-3 center">
+            <img class="itemImage" src="../resource/catalog/<%= order.bouquet.image %>" alt="<%= order.bouquet.name %>"><br>
+            <span class="itemName"><%= order.bouquet.name %></span><br>
+            <span class="itemName"><%= order.count %> шт.</span><br>
+            <span class="itemPrice"><%= order.finalPrice %> руб.</span>
+        </div>
+        <% }); %>
+    </div>
+</div>
+<script type="text/javascript" src="../js/myOrders.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head.ejs %>
+</head>
+<body>
+<header>
+    <% include ../partials/header.ejs %>
+</header>
+<div class="container-fluid margin-top">
+    <div class="row">
+        <div class="col-lg-3 col-md-4">
+            <div class="header">
+                <h1>Наши цветы</h1>
+            </div>
+            <ul id="flowers-list" class="flowers-list">
+                <% data.forEach(function(item) { %>
+                <li><a id="<%= item._id %>" href="javascript: void(0)" onclick="readCertainFlower(event)"><%= item.name %></a></li>
+                <% }); %>
+            </ul>
+        </div>
+        <div class="col-lg-9 col-md-8 flower-information">
+            <div id="flower-header" class="flower-header">
+                <h1></h1>
+            </div>
+            <div id="flower-description" class="flower-description">
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../partials/bottomInformation.ejs %>
+<footer>
+    <% include ../partials/footer.ejs %>
+</footer>
+<script type="text/javascript" src="../js/flowers.js"></script>
+</body>
+</html>

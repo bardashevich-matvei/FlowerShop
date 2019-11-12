@@ -1,0 +1,242 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FAFAFA;
+}
+
+.hidden {
+    display: none;
+}
+
+.margin-top {
+    margin-top: 5%;
+}
+
+.header {
+    text-align: center;
+    color: #6ce514;
+}
+
+.flower-information .flower-image {
+    display: block;
+    margin: auto;
+}
+
+.flower-header {
+    text-align: left;
+    color: #000;
+}
+
+.flowers-list li, a{
+    color: #6ce514;
+}
+
+.bottom-information {
+    background-color: #FFEBEE;
+}
+
+.bottom-information .header {
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.bottom-information .information li, p {
+    color: #000;
+}
+
+.bottom-information .information p {
+    margin: 20px auto;
+}
+
+.map-information {
+    background-color: #f3fff2;
+}
+
+.map-information .information li, p {
+    color: #000;
+}
+
+.map-information .information p {
+    margin: 20px auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.itemImage {
+    width: 140px;
+    display: block;
+    margin: auto;
+}
+
+.itemName {
+    font-size: 16px;
+    color: #6ce514;
+    font-style: italic;
+}
+
+.itemPrice {
+    font-size: 18px;
+    color: #000;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.left {
+    text-align: left;
+}
+
+.catalog-item-image {
+    width: 200px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.map-image {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+/*Order form*/
+.order-form {
+    text-align: center;
+    background-color: #FFEBEE;
+
+    border: 2px solid #6ce514;
+    border-radius: 15px;
+
+    padding: 10px;
+}
+
+.order-form #header {
+    font-size: 1.2em;
+    color: #3dd327;
+}
+
+.order-form select {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.order-form #countGroup {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.order-form #countGroup input {
+    text-align: center;
+}
+
+.order-form #countGroup button[type=button] {
+    background-color: #6ce514;
+    color: #fff;
+}
+
+.order-form #priceText {
+    font-size: 1.2em;
+    color: #3dd327;
+}
+
+.carousel-margin-top {
+    margin-top: 3%;
+}
+
+.block {
+    width: 100%;
+    height: auto;
+    padding: 15px 15%;
+    margin: 0;
+    background-color: green;
+    color: #fff;
+}
+.block h2{
+    margin-top: 10px;
+}
+input:invalid {
+    border: 1px solid green;
+}
+
+/*Footer*/
+footer {
+    background-color: #3a3f46;
+    color: white;
+}
+
+footer .logo{
+    margin-top: 5px;
+    margin-left: 490px;
+}
+
+footer .second-bar .logo a{
+    color: white;
+    font-size: 28px;
+    float: left;
+    font-weight: bold;
+    line-height: 68px;
+    margin: 0;
+    padding: 0;
+}
+
+footer a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+footer .second-bar {
+    text-align: center;
+    background-color: #33373e;
+}
+
+footer .second-bar a {
+    font-size: 22px;
+    color: #9fa3a9;
+    padding: 10px;
+    transition: 0.2s;
+    line-height: 68px;
+}
+
+footer .second-bar a:hover {
+    text-decoration: none;
+}
+
+footer .social-icons {
+    float: right;
+}
+
+
+footer .facebook:hover {
+    color: #0077e2;
+}
+
+footer .google:hover {
+    color: #ef1a1a;
+}
+
+footer .twitter:hover {
+    color: #00aced;
+}
+
+footer .vk:hover {
+    color: #305a7f;
+}
+
+@media screen and (max-width: 767px) {
+    footer {
+        text-align: center;
+    }
+
+    footer .info{
+        text-align: center;
+    }
+}
